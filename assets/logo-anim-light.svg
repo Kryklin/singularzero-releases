@@ -1,0 +1,336 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1080 1080" width="100%" height="100%">
+  <defs>
+    <!-- Blue Glitch Filter -->
+    <filter id="glitchBlue" x="-20%" y="-20%" width="140%" height="140%">
+      <feColorMatrix type="matrix" values="0 0 0 0 0
+                                           0 0 0 0 0.4
+                                           0 0 0 0 0.8
+                                           0 0 0 0.85 0" />
+    </filter>
+
+    <!-- Magenta Glitch Filter -->
+    <filter id="glitchMagenta" x="-20%" y="-20%" width="140%" height="140%">
+      <feColorMatrix type="matrix" values="0.8 0 0 0 0.7
+                                           0 0 0 0 0
+                                           0.5 0 0 0 0.5
+                                           0 0 0 0.85 0" />
+    </filter>
+
+    <!-- Linear Gradient for Laser Scanline -->
+    <linearGradient id="scanBeamLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0066cc" stop-opacity="0" />
+      <stop offset="85%" stop-color="#0066cc" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#0088ff" stop-opacity="0.85" />
+    </linearGradient>
+
+    <!-- Hypercube Edge Gradients -->
+    <linearGradient id="edgeBluePurpleLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0066cc" />
+      <stop offset="60%" stop-color="#6b21a8" />
+      <stop offset="100%" stop-color="#c026d3" />
+    </linearGradient>
+
+    <linearGradient id="facetTopLight" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#0066cc" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#6b21a8" stop-opacity="0.05" />
+    </linearGradient>
+
+    <linearGradient id="facetLeftLight" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#0066cc" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.03" />
+    </linearGradient>
+
+    <linearGradient id="facetRightLight" x1="100%" y1="50%" x2="0%" y2="50%">
+      <stop offset="0%" stop-color="#c026d3" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.03" />
+    </linearGradient>
+
+    <!-- Singularity Vortex Gradient -->
+    <radialGradient id="singularityCoreLight" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="35%" stop-color="#1e293b" />
+      <stop offset="65%" stop-color="#6b21a8" stop-opacity="0.4" />
+      <stop offset="90%" stop-color="#0066cc" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#0066cc" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Crown Gradient -->
+    <linearGradient id="crownGradLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="30%" stop-color="#0066cc" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="lightGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Master Artwork Definition -->
+    <g id="singularZeroArtworkLight">
+      <!-- Hypercube Outer Facets -->
+      <polygon points="540,310 760,437 540,563 320,437" fill="url(#facetTopLight)" stroke="#0066cc" stroke-width="2.5" />
+      <polygon points="320,437 540,563 540,817 320,690" fill="url(#facetLeftLight)" stroke="#0066cc" stroke-width="2.5" />
+      <polygon points="760,437 540,563 540,817 760,690" fill="url(#facetRightLight)" stroke="#c026d3" stroke-width="2.5" />
+
+      <!-- Hypercube Outer Edges Highlighting -->
+      <polyline points="540,310 760,437 760,690 540,817 320,690 320,437 540,310" fill="none" stroke="#0066cc" stroke-width="3" />
+      <line x1="540" y1="563" x2="540" y2="817" stroke="#0066cc" stroke-width="3" />
+      <line x1="540" y1="563" x2="760" y2="437" stroke="#0066cc" stroke-width="2.5" />
+      <line x1="540" y1="563" x2="320" y2="437" stroke="#0066cc" stroke-width="2.5" />
+
+      <!-- Hypercube Inner Tesseract Struts (4D Projection) -->
+      <line x1="540" y1="310" x2="540" y2="430" stroke="url(#edgeBluePurpleLight)" stroke-width="2" stroke-dasharray="4 2" />
+      <line x1="760" y1="437" x2="655" y2="500" stroke="url(#edgeBluePurpleLight)" stroke-width="2" stroke-dasharray="4 2" />
+      <line x1="760" y1="690" x2="655" y2="628" stroke="url(#edgeBluePurpleLight)" stroke-width="2" stroke-dasharray="4 2" />
+      <line x1="540" y1="817" x2="540" y2="698" stroke="url(#edgeBluePurpleLight)" stroke-width="2" stroke-dasharray="4 2" />
+      <line x1="320" y1="690" x2="425" y2="628" stroke="url(#edgeBluePurpleLight)" stroke-width="2" stroke-dasharray="4 2" />
+      <line x1="320" y1="437" x2="425" y2="500" stroke="url(#edgeBluePurpleLight)" stroke-width="2" stroke-dasharray="4 2" />
+
+      <!-- Inner Tesseract Core Hexagon -->
+      <polygon points="540,430 655,500 655,628 540,698 425,628 425,500" fill="none" stroke="#6b21a8" stroke-width="2" />
+      <line x1="540" y1="563" x2="540" y2="698" stroke="#6b21a8" stroke-width="2" />
+      <line x1="540" y1="563" x2="655" y2="500" stroke="#6b21a8" stroke-width="2" />
+      <line x1="540" y1="563" x2="425" y2="500" stroke="#6b21a8" stroke-width="2" />
+
+      <!-- Central Singularity Vortex (Zero Core) -->
+      <ellipse cx="540" cy="563" rx="110" ry="110" fill="url(#singularityCoreLight)" />
+
+      <!-- Topological Vortex Swirl Spiral Arms -->
+      <path d="M 540 563 Q 580 520 630 550 T 650 610" fill="none" stroke="#0066cc" stroke-width="2.5" opacity="0.9" />
+      <path d="M 540 563 Q 500 606 450 576 T 430 516" fill="none" stroke="#c026d3" stroke-width="2.5" opacity="0.9" />
+      <path d="M 540 563 Q 550 620 490 640 T 440 600" fill="none" stroke="#0066cc" stroke-width="2" opacity="0.75" />
+      <path d="M 540 563 Q 530 506 590 486 T 640 526" fill="none" stroke="#6b21a8" stroke-width="2" opacity="0.75" />
+
+      <!-- Singularity Event Horizon Ring -->
+      <circle cx="540" cy="563" r="34" fill="#0f172a" stroke="#0066cc" stroke-width="3" filter="url(#lightGlow)" />
+      <circle cx="540" cy="563" r="14" fill="#ffffff" stroke="#0066cc" stroke-width="2" />
+
+      <!-- Hypercube Vertex Glowing Lattice Nodes -->
+      <circle cx="540" cy="310" r="5" fill="#0066cc" filter="url(#lightGlow)" />
+      <circle cx="760" cy="437" r="5" fill="#0066cc" filter="url(#lightGlow)" />
+      <circle cx="760" cy="690" r="5" fill="#c026d3" filter="url(#lightGlow)" />
+      <circle cx="540" cy="817" r="5" fill="#0066cc" filter="url(#lightGlow)" />
+      <circle cx="320" cy="690" r="5" fill="#0066cc" filter="url(#lightGlow)" />
+      <circle cx="320" cy="437" r="5" fill="#c026d3" filter="url(#lightGlow)" />
+      <circle cx="540" cy="430" r="3.5" fill="#6b21a8" />
+      <circle cx="655" cy="500" r="3.5" fill="#6b21a8" />
+      <circle cx="655" cy="628" r="3.5" fill="#6b21a8" />
+      <circle cx="540" cy="698" r="3.5" fill="#6b21a8" />
+      <circle cx="425" cy="628" r="3.5" fill="#6b21a8" />
+      <circle cx="425" cy="500" r="3.5" fill="#6b21a8" />
+
+      <!-- Topological Chess King Crown -->
+      <!-- Crown Base Band -->
+      <path d="M 430 330 L 540 310 L 650 330 L 640 355 L 540 335 L 440 355 Z" fill="#1e293b" stroke="#0066cc" stroke-width="2.5" />
+      <circle cx="485" cy="342" r="3" fill="#0066cc" />
+      <circle cx="540" cy="332" r="3.5" fill="#ffffff" />
+      <circle cx="595" cy="342" r="3" fill="#c026d3" />
+
+      <!-- Crown Body & 5 Spired Facets -->
+      <polygon points="440,330 405,215 475,255 540,165 605,255 675,215 640,330 540,310" fill="url(#facetTopLight)" stroke="#0066cc" stroke-width="2.5" />
+      
+      <!-- Crown Inner Facet Ridges -->
+      <line x1="540" y1="165" x2="540" y2="310" stroke="#0f172a" stroke-width="2" />
+      <line x1="475" y1="255" x2="485" y2="330" stroke="#0066cc" stroke-width="1.8" />
+      <line x1="605" y1="255" x2="595" y2="330" stroke="#0066cc" stroke-width="1.8" />
+
+      <!-- Crown Spire Jewels -->
+      <circle cx="405" cy="215" r="4.5" fill="#0066cc" filter="url(#lightGlow)" />
+      <circle cx="475" cy="255" r="4" fill="#6b21a8" />
+      <circle cx="605" cy="255" r="4" fill="#6b21a8" />
+      <circle cx="675" cy="215" r="4.5" fill="#c026d3" filter="url(#lightGlow)" />
+
+      <!-- Grandmaster Chess King Cross at Apex -->
+      <g filter="url(#lightGlow)">
+        <!-- Vertical Bar -->
+        <path d="M 533 105 L 547 105 L 544 165 L 536 165 Z" fill="url(#crownGradLight)" stroke="#0066cc" stroke-width="1.5" />
+        <!-- Cross Horizontal Bar -->
+        <path d="M 515 120 L 565 120 L 565 132 L 515 132 Z" fill="url(#crownGradLight)" stroke="#0066cc" stroke-width="1.5" />
+        <!-- Apex Diamond Gem -->
+        <polygon points="540,94 547,105 540,116 533,105" fill="#ffffff" stroke="#0066cc" stroke-width="1.5" />
+      </g>
+    </g>
+
+    <!-- Scanline Mask -->
+    <mask id="artworkMaskLight">
+      <use href="#singularZeroArtworkLight" xlink:href="#singularZeroArtworkLight" />
+    </mask>
+  </defs>
+
+  <style>
+    /* Breathing Aura Pulse */
+    .aura-bg {
+      transform-origin: center;
+      animation: auraPulse 4s ease-in-out infinite;
+    }
+    @keyframes auraPulse {
+      0%, 100% { opacity: 0.35; transform: scale(0.98); }
+      50% { opacity: 0.75; transform: scale(1.02); }
+    }
+
+    /* Core Floating/Levitation */
+    .core-levitate {
+      transform-origin: 540px 540px;
+      animation: coreFloat 5s ease-in-out infinite;
+    }
+    @keyframes coreFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* Blue Glitch Slices */
+    .glitch-blue {
+      transform-origin: center;
+      opacity: 0;
+      animation: blueGlitch 4.2s infinite ease-in-out;
+    }
+    @keyframes blueGlitch {
+      0%, 86%, 100% { opacity: 0; transform: translate(0, 0); }
+      87% { opacity: 0.85; transform: translate(-6px, 2px); clip-path: inset(18% 0 68% 0); }
+      88% { opacity: 0.9; transform: translate(4px, -3px); clip-path: inset(52% 0 32% 0); }
+      89% { opacity: 0.6; transform: translate(-4px, 3px); clip-path: inset(80% 0 6% 0); }
+      90% { opacity: 0; transform: translate(0, 0); }
+      94% { opacity: 0.8; transform: translate(5px, -2px); clip-path: inset(35% 0 50% 0); }
+      95% { opacity: 0; transform: translate(0, 0); }
+    }
+
+    /* Magenta Glitch Slices */
+    .glitch-magenta {
+      transform-origin: center;
+      opacity: 0;
+      animation: magentaGlitch 4.2s infinite ease-in-out;
+    }
+    @keyframes magentaGlitch {
+      0%, 86%, 100% { opacity: 0; transform: translate(0, 0); }
+      87.5% { opacity: 0.85; transform: translate(6px, -2px); clip-path: inset(38% 0 45% 0); }
+      88.5% { opacity: 0.9; transform: translate(-5px, 2px); clip-path: inset(12% 0 74% 0); }
+      89.5% { opacity: 0.6; transform: translate(4px, -3px); clip-path: inset(65% 0 20% 0); }
+      90.5% { opacity: 0; transform: translate(0, 0); }
+      94.5% { opacity: 0.75; transform: translate(-4px, 2px); clip-path: inset(70% 0 15% 0); }
+      95.5% { opacity: 0; transform: translate(0, 0); }
+    }
+
+    /* Cyber Scanline Sweep */
+    .scan-beam {
+      animation: scanSweep 3.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    @keyframes scanSweep {
+      0% { transform: translateY(-300px); opacity: 0; }
+      15% { opacity: 0.85; }
+      85% { opacity: 0.85; }
+      100% { transform: translateY(1180px); opacity: 0; }
+    }
+
+    /* HUD Reticle Calibration Ring Rotations */
+    .hud-ring-outer {
+      transform-origin: 540px 540px;
+      animation: rotateClockwise 40s linear infinite;
+    }
+    .hud-ring-inner {
+      transform-origin: 540px 540px;
+      animation: rotateCounter 30s linear infinite;
+    }
+    @keyframes rotateClockwise {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes rotateCounter {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+
+    /* HUD Corner Target Brackets */
+    .hud-bracket {
+      stroke: #0066cc;
+      stroke-width: 2.5;
+      fill: none;
+      opacity: 0.55;
+      animation: hudPulse 4s ease-in-out infinite;
+    }
+    @keyframes hudPulse {
+      0%, 100% { opacity: 0.35; }
+      50% { opacity: 0.75; }
+    }
+
+    .hud-text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      fill: #0066cc;
+      opacity: 0.85;
+    }
+  </style>
+
+  <!-- 1. Ambient Background HUD Calibration Rings -->
+  <g class="hud-ring-outer" opacity="0.35">
+    <circle cx="540" cy="540" r="460" fill="none" stroke="#0066cc" stroke-width="1.2" stroke-dasharray="12 18 4 18" />
+    <circle cx="540" cy="540" r="472" fill="none" stroke="#6b21a8" stroke-width="0.8" stroke-dasharray="2 10" />
+  </g>
+  <g class="hud-ring-inner" opacity="0.25">
+    <circle cx="540" cy="540" r="390" fill="none" stroke="#0066cc" stroke-width="1" stroke-dasharray="6 24" />
+  </g>
+
+  <!-- 2. Cybernetic HUD Target Crosshairs & Brackets -->
+  <g class="hud-bracket">
+    <!-- Top-Left -->
+    <path d="M 60 120 L 60 60 L 120 60" />
+    <circle cx="60" cy="60" r="3" fill="#0066cc" />
+    
+    <!-- Top-Right -->
+    <path d="M 1020 120 L 1020 60 L 960 60" />
+    <circle cx="1020" cy="60" r="3" fill="#0066cc" />
+    
+    <!-- Bottom-Left -->
+    <path d="M 60 960 L 60 1020 L 120 1020" />
+    <circle cx="60" cy="1020" r="3" fill="#0066cc" />
+    
+    <!-- Bottom-Right -->
+    <path d="M 1020 960 L 1020 1020 L 960 1020" />
+    <circle cx="1020" cy="1020" r="3" fill="#0066cc" />
+    
+    <!-- Reticle Calibrated Ticks -->
+    <line x1="540" y1="40" x2="540" y2="55" stroke="#0066cc" stroke-width="2" />
+    <line x1="540" y1="1025" x2="540" y2="1040" stroke="#0066cc" stroke-width="2" />
+    <line x1="40" y1="540" x2="55" y2="540" stroke="#0066cc" stroke-width="2" />
+    <line x1="1025" y1="540" x2="1040" y2="540" stroke="#0066cc" stroke-width="2" />
+  </g>
+
+  <!-- HUD Coordinate Telemetry Labels -->
+  <text x="80" y="85" class="hud-text">MANIFOLD: H^64</text>
+  <text x="80" y="105" class="hud-text">TOPOLOGY: Q_6 / E_8^8</text>
+  <text x="840" y="85" class="hud-text">SYS: LOCKLESS SMP</text>
+  <text x="840" y="105" class="hud-text">WEIGHTS: ZERO (0 MB)</text>
+
+  <!-- 3. Core Floating Levitation Group -->
+  <g class="core-levitate">
+    <!-- Blue Glitch Ghost -->
+    <use href="#singularZeroArtworkLight" xlink:href="#singularZeroArtworkLight" filter="url(#glitchBlue)" class="glitch-blue" />
+
+    <!-- Magenta Glitch Ghost -->
+    <use href="#singularZeroArtworkLight" xlink:href="#singularZeroArtworkLight" filter="url(#glitchMagenta)" class="glitch-magenta" />
+
+    <!-- Pure Original Artwork -->
+    <use href="#singularZeroArtworkLight" xlink:href="#singularZeroArtworkLight" />
+
+    <!-- 4. Masked Quantum Laser Scanline -->
+    <g mask="url(#artworkMaskLight)">
+      <rect x="0" y="0" width="1080" height="90" fill="url(#scanBeamLight)" class="scan-beam" />
+      <line x1="0" y1="90" x2="1080" y2="90" stroke="#0066cc" stroke-width="1.5" opacity="0.8" class="scan-beam" />
+    </g>
+  </g>
+
+  <!-- Bottom HUD Status Line -->
+  <g opacity="0.75">
+    <line x1="280" y1="960" x2="440" y2="960" stroke="#0066cc" stroke-width="1.2" />
+    <circle cx="440" cy="960" r="2.5" fill="#0066cc" />
+    <text x="540" y="964" class="hud-text" text-anchor="middle" font-size="12px">SINGULARITY COORD: x* = 0</text>
+    <circle cx="640" cy="960" r="2.5" fill="#0066cc" />
+    <line x1="640" y1="960" x2="800" y2="960" stroke="#0066cc" stroke-width="1.2" />
+  </g>
+</svg>
