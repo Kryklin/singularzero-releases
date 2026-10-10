@@ -1,17 +1,17 @@
 <div align="center">
 
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/header-anim-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/header-anim-light.svg">
-    <img alt="SingularZero Banner" src="assets/header-anim-dark.svg" width="100%">
-  </picture>
-
-  <br><br>
-
-  <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/logo-anim-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/logo-anim-light.svg">
     <img alt="SingularZero Logo" src="assets/logo-anim-dark.svg" width="200" height="200">
+  </picture>
+
+  <br>
+
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/header-anim-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/header-anim-light.svg">
+    <img alt="SingularZero Banner" src="assets/header-anim-dark.svg" width="100%">
   </picture>
 
   <br>
