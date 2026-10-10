@@ -33,7 +33,7 @@
 
 ---
 
-> ### ♟️ *"Think you can beat 575 kilobytes of code?"*
+> ### ♟️ *"Think you can beat 578 kilobytes of code?"*
 >
 > Go ahead—download the binary. Load it into your GUI, or launch it straight in your terminal.
 >
