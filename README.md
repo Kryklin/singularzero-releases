@@ -54,90 +54,24 @@
 
 ---
 
-## GUI Installation
+## Quick Start
 
-SingularZero is a headless UCI chess engine designed to be loaded into any standard chess GUI.
-
-### 1. Cutechess / Cutechess-cli
-1. Go to **Tools -> Settings -> Engines -> Add...**
-2. Browse to the downloaded `singularzero.exe` (or `singularzero-linux`).
-3. Select protocol: **UCI**.
-4. Set memory (`Hash`) and core count (`Threads`) according to your hardware.
-
-### 2. Arena Chess GUI
-1. Open **Engines -> Manage -> Details -> New**.
-2. Select `singularzero.exe`.
-3. Choose **UCI** protocol and click **Apply**.
-
-### 3. Banksia GUI / Fritz / ChessBase / Nibbler
-1. Add new UCI engine and point to the binary path.
-2. The engine will automatically register and initialize.
+1. **Download** the executable for your operating system above.
+2. **Load** `singularzero.exe` (or `singularzero-linux`) into your favorite chess GUI ([Cutechess](USAGE.md#cutechess--cutechess-cli), [Arena](USAGE.md#arena-chess-gui), [Banksia](USAGE.md#banksia-gui--fritz--chessbase--nibbler), Fritz, or Nibbler) as a standard **UCI** engine.
+3. **Play.** Or double-click the executable to launch the interactive terminal chess board directly.
 
 ---
 
-## Interactive Command-Line Mode
+## Documentation & Configuration
 
-If executed directly in a terminal or console, SingularZero launches an interactive diagnostic environment:
+For full technical specifications, launch arguments, and configuration options, see the dedicated guide:
 
-```text
-  ===============================================================
-                 SINGULARZERO CHESS ENGINE v0.1.0                
-               High-Performance Modern Chess Engine             
-  ===============================================================
+👉 **[Complete Configuration & Usage Guide (USAGE.md)](USAGE.md)**
 
-  [*] 64-bit Bitboard Engine & Magic Bitboard Multipliers
-  [*] Multi-Threaded Negamax Alpha-Beta with PVS & Quiescence
-  [*] Hybrid Positional & Dynamic Tactical Evaluation
-  [*] Lockless High-Throughput Transposition Table Cluster
-  [*] Universal Chess Interface (UCI) Protocol Driver
-
-Type 'help' for commands or 'play' to challenge the engine.
-
-singularzero> 
-```
-
-### Available Console Commands
-* `uci`: Switch to standard UCI protocol mode.
-* `play [white|black]`: Start an interactive match against SingularZero.
-* `move <e2e4>`: Input a move in algebraic coordinate format.
-* `go`: Instruct the engine to compute and execute the best move from the current position.
-* `eval`: Display a static positional and material evaluation breakdown.
-* `d` / `display`: Render the current 8x8 ASCII board.
-* `perft <depth>`: Run move generator perft validation and measure raw node throughput.
-* `bench [threads]`: Run the built-in tactical and strategic crucible test suite.
-* `fen <fen string>`: Set the board to a specific FEN position.
-* `undo`: Undo the previous half-move.
-* `new`: Reset to the standard starting position.
-* `quit`: Exit the engine.
-
----
-
-## Configurable UCI Options
-
-| Option Name | Type | Default | Range | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| **`Hash`** | `spin` | *Auto-detected* | `1` – `65536` | Memory allocated to the Transposition Table in Megabytes (MB). |
-| **`Threads`** | `spin` | *Auto-detected* | `1` – `512` | Number of CPU search worker threads. |
-| **`Mode`** | `combo` | `Cascade` | `Cascade`, `Hybrid`, `Fast`, `Direct` | Engine tactical decision mode (`Cascade` recommended). |
-| **`SyzygyPath`** | `string` | `<empty>` | Any valid path | Directory containing `.rtm.bin` and `.rtbw.bin` Syzygy tablebases. |
-| **`OwnBook`** | `check` | `true` | `true` / `false` | Enable or disable opening book probing. |
-| **`BookFile`** | `string` | `book.bin` | Any `.bin` file | Polyglot opening book file path. |
-
----
-
-## Verifying Integrity
-
-Each official release asset includes a `SHA256SUMS.txt` file. You can verify your download with:
-
-```powershell
-# Windows PowerShell
-Get-FileHash .\singularzero.exe -Algorithm SHA256
-```
-
-```bash
-# Linux
-sha256sum -c SHA256SUMS.txt
-```
+* **[GUI Installation Walkthroughs](USAGE.md#1-gui-installation--setup)** — Setup guides for Cutechess, Arena, Banksia, Fritz, and Nibbler.
+* **[Command-Line Launch Options](USAGE.md#2-command-line-launch-options)** — Automated self-play (`--match`), benchmark (`--bench`), and headless switches.
+* **[Configurable UCI Options](USAGE.md#3-configurable-uci-options)** — Transposition table sizing (`Hash`), threading (`Threads`), Syzygy tablebases (`SyzygyPath`), and books.
+* **[Interactive Console Commands](USAGE.md#4-interactive-console-mode-commands)** — Command reference for direct terminal play (`play`, `eval`, `perft`, `bench`).
 
 ---
 
