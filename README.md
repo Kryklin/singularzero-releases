@@ -17,7 +17,7 @@
   <br>
 
   <p>
-    <img src="https://img.shields.io/badge/version-0.1.0-blue.svg" alt="Version">
+    <img src="https://img.shields.io/badge/version-0.1.1-blue.svg" alt="Version">
     <img src="https://img.shields.io/badge/size-575%20KB%20(Pure%20Rust)-success.svg" alt="Binary Size">
     <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License">
     <img src="https://img.shields.io/badge/protocol-UCI-orange.svg" alt="Protocol">
