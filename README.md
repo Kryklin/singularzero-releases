@@ -18,50 +18,45 @@
 
   <p>
     <img src="https://img.shields.io/badge/version-0.1.0-blue.svg" alt="Version">
+    <img src="https://img.shields.io/badge/size-575%20KB%20(Pure%20Rust)-success.svg" alt="Binary Size">
     <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License">
     <img src="https://img.shields.io/badge/protocol-UCI-orange.svg" alt="Protocol">
     <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey.svg" alt="Platform">
-    <img src="https://img.shields.io/badge/SIMD-AVX--512%20%7C%20AVX2%20%7C%20Scalar%20Auto--Dispatch-brightgreen.svg" alt="Architecture">
   </p>
 
   <p>
-    <strong>Advanced, High-Performance Autonomous Chess Engine</strong><br>
-    <em>Developed by <strong>Ellie Slight</strong> • Written in pure systems Rust • Zero third-party dependencies</em>
+    <strong>Autonomous, High-Performance Chess Engine</strong><br>
+    <em>Engineered by <strong>Ellie Slight</strong> • Zero external dependencies • Zero neural weight files</em>
   </p>
 
 </div>
 
 ---
 
-## Unified Binary (Automatic Hardware Dispatch)
-
-SingularZero distributes **one single executable** per operating system. You do not need to choose between multiple instruction set builds:
-
-* **Windows:** [`singularzero.exe`](https://github.com/Kryklin/singularzero-releases/releases/latest/download/singularzero.exe)
-* **Linux:** [`singularzero-linux`](https://github.com/Kryklin/singularzero-releases/releases/latest/download/singularzero-linux)
-
-### How Hardware Detection Works at Runtime
-Upon launching, the engine queries CPUID capabilities once via lockless atomic probes:
-1. **AVX-512:** If 512-bit vector extensions (`avx512f`) are available, the engine executes through 512-bit ZMM vector pipelines.
-2. **AVX2 + FMA:** If 256-bit vector extensions (`avx2`, `fma`) are present, it executes 8-wide SIMD instructions.
-3. **Scalar Fallback:** If run on legacy hardware or virtual machines lacking AVX, it automatically falls back to scalar execution with zero configuration.
+> ### ♟️ *"Think you can beat 575 kilobytes of code?"*
+>
+> Go ahead—download the binary. Load it into your GUI, or launch it straight in your terminal.
+>
+> In fact, **unplug your internet connection entirely.** Pull the ethernet cable. Switch off your Wi-Fi. 
+>
+> There is no cloud server whispering moves into its ear. No 80-megabyte neural network blobs lurking in the background. No external libraries, no bloated runtimes, zero third-party dependencies. Just a lone, razor-sharp **575 KB** standalone executable sitting in your CPU cache, waiting to quietly dismantle your position move by move.
+>
+> Challenge it yourself if you dare. Pit your favorite grandmaster engines against it if you want to watch a mystery unfold.
+>
+> And if you figure out how something this impossibly tiny plays this brutally... *keep it to yourself.*
 
 ---
 
-## Key Features
+## Downloads
 
-* **Bitboard Representation:** High-speed 64-bit bitboards with magic bitboard multipliers for ultra-fast sliding piece move generation.
-* **Multi-Threaded Negamax Search:** Principal Variation Search (PVS), Staged Move Picking, Quiescence Search with Stand-Pat pruning, Late Move Reductions (LMR), Null Move Pruning, and Adaptive History Heuristics.
-* **Hybrid Dynamic Evaluation:** Blends handcrafted positional features (PSQT, lockless pawn structure tables, rook file penetration, bishop pair bonuses, king safety geometry) with high-dimensional tactical scoring.
-* **Lockless Transposition Table:** Clustered, cacheline-aligned transposition table with age tracking, depth replacement, and thread-safe lockless probing.
-* **Endgame Tablebase Support:** Native Syzygy 3-4-5-6 piece endgame tablebase probing via `SyzygyPath`.
-* **Polyglot Opening Book:** Built-in opening book probing with configurable book file loading.
+* **Windows:** [`singularzero.exe`](https://github.com/Kryklin/singularzero-releases/releases/latest/download/singularzero.exe) (575 KB standalone executable with embedded application icon)
+* **Linux:** [`singularzero-linux`](https://github.com/Kryklin/singularzero-releases/releases/latest/download/singularzero-linux) (Unified Linux binary)
 
 ---
 
 ## GUI Installation
 
-SingularZero is a headless chess engine designed to be loaded into any standard chess GUI.
+SingularZero is a headless UCI chess engine designed to be loaded into any standard chess GUI.
 
 ### 1. Cutechess / Cutechess-cli
 1. Go to **Tools -> Settings -> Engines -> Add...**
