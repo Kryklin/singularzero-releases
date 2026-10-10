@@ -49,7 +49,7 @@
 
 ## Downloads
 
-* **Windows:** [`singularzero.exe`](https://github.com/Kryklin/singularzero-releases/releases/latest/download/singularzero.exe) (575 KB standalone executable with embedded application icon)
+* **Windows:** [`singularzero.exe`](https://github.com/Kryklin/singularzero-releases/releases/latest/download/singularzero.exe) (578 KB standalone executable with embedded application icon)
 * **Linux:** [`singularzero-linux`](https://github.com/Kryklin/singularzero-releases/releases/latest/download/singularzero-linux) (Unified Linux binary)
 
 ---
