@@ -39,7 +39,7 @@
 >
 > In fact, **unplug your internet connection entirely.** Pull the ethernet cable. Switch off your Wi-Fi. 
 >
-> There is no cloud server whispering moves into its ear. No 80-megabyte neural network blobs lurking in the background. No external libraries, no bloated runtimes, zero third-party dependencies. Just a lone, razor-sharp **575 KB** standalone executable sitting in your CPU cache, waiting to quietly dismantle your position move by move.
+> There is no cloud server whispering moves into its ear. No 80-megabyte neural network blobs lurking in the background. No external libraries, no bloated runtimes, zero third-party dependencies. Just a lone, razor-sharp **578 KB** standalone executable sitting in your CPU cache, waiting to quietly dismantle your position move by move.
 >
 > Challenge it yourself if you dare. Pit your favorite grandmaster engines against it if you want to watch a mystery unfold.
 >
